@@ -25,5 +25,19 @@ $mmu = new MMU();
 $mmu->write(0, 1);
 var_dump($mmu->read(0));
 
+/* Extendable interfaces */
+interface a {
+	public function foo();
+}
+
+interface b extends a {
+	public function bar();
+}
+
+class c implements b {
+	public function foo() {}
+	public function bar() {}
+}
+
 // EOF
 
