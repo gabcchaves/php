@@ -12,5 +12,16 @@ while ($row = $result->fetch_assoc()) {
 	print $row['name'] . PHP_EOL;
 }
 
+print PHP_EOL;
+
+/* PDO */
+$conn2 = new PDO("mysql:host=$server;dbname=$database", $user, $password);
+$query = $conn2->query("SELECT name FROM api;");
+
+// Fetch associative array
+while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
+	print $row['name'] . PHP_EOL;
+}
+
 // EOF
 
